@@ -9,14 +9,21 @@
 </head>
 <body ng-app="HelloWorldApp">
 <div ng-controller="HelloWorldController">
-<input type="button" value="EXPAND" ng-click="increaseRadius()">
+    <!--<input type="button" value="EXPAND" ng-click="increaseRadius()">-->
+    <input type="button" value="MORE" ng-click="moreDots()">
+    <!--<input type="checkbox" ng-model="animate">animate: {{animate}}-->
 <a-scene>
-    <a-sphere position="0 1.25 -1" radius="{{radiuso}}" color="#EF2D5E" ng-click="increaseRadius()">
-        <a-animation attribute="position" to="0 2.2 -1" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+
+        <a-sphere ng-repeat="posi in pos" position={{posi.loc}} radius={{posi.radius}} color="#FFFFFF">
+
+    <a-animation ng-if="true" attribute="position" to="2.5 2.5 2.5" direction="alternate" dur="2000" repeat="indefinite" ></a-animation>
 
     </a-sphere>
+
+
     <!--<a-box color="tomato" depth="2" height="4" width="0.5"></a-box>-->
-    <a-entity position="0 0 3.8">
+    <a-sky color="#000000"></a-sky>
+    <a-entity position="2.5 1 5">
         <a-camera></a-camera>
     </a-entity>
 </a-scene>
