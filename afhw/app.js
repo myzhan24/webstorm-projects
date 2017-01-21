@@ -35,7 +35,7 @@
                     var x = getRandom()*5+1;
                     var y = getRandom()*5+1;
                     var z = getRandom()*5+1;
-                    temp.push({loc:''+x+" "+y+" "+z, radius:getRandom()/10});
+                    temp.push({loc:''+x+" "+y+" "+z, radius:getRandom()/10, dur:2013});
                 }
 
                 $scope.pos = $scope.pos.concat(temp);
@@ -43,6 +43,10 @@
 
             $scope.getRandom = function () {
                 return getRandom()/10;
+            };
+
+            $scope.getRandomDuration = function () {
+                return getRandom()*1500+500;
             };
 
             function getRandom() {

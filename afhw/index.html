@@ -7,27 +7,20 @@
     <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-app="HelloWorldApp">
-<div ng-controller="HelloWorldController">
-    <!--<input type="button" value="EXPAND" ng-click="increaseRadius()">-->
-    <input type="button" value="MORE" ng-click="moreDots()">
-    <!--<input type="checkbox" ng-model="animate">animate: {{animate}}-->
+<body ng-app="HelloWorldApp" ng-controller="HelloWorldController">
+
+<!--<input type="button" value="EXPAND" ng-click="increaseRadius()">-->
+<input type="button" value="MORE" ng-click="moreDots()">
+<!--<input type="checkbox" ng-model="animate">animate: {{animate}}-->
 <a-scene>
-
-        <a-sphere ng-repeat="posi in pos" position={{posi.loc}} radius={{posi.radius}} color="#FFFFFF">
-
-    <a-animation ng-if="true" attribute="position" to="2.5 2.5 2.5" direction="alternate" dur="2000" repeat="indefinite" ></a-animation>
-
+    <a-sphere ng-repeat="posi in pos" position={{posi.loc}} radius={{posi.radius}} color="#FFFFFF">
+        <a-animation ng-if="true" attribute="position" to="2.5 2.5 2.5" direction="alternate" dur="5000" repeat="indefinite" ></a-animation>
     </a-sphere>
-
-
     <!--<a-box color="tomato" depth="2" height="4" width="0.5"></a-box>-->
     <a-sky color="#000000"></a-sky>
     <a-entity position="2.5 1 5">
         <a-camera></a-camera>
     </a-entity>
 </a-scene>
-
-</div>
 </body>
 </html>
