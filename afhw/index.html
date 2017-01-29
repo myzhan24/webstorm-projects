@@ -13,8 +13,13 @@
 <input type="button" value="MORE" ng-click="moreDots()">
 <!--<input type="checkbox" ng-model="animate">animate: {{animate}}-->
 <a-scene>
-    <a-sphere ng-repeat="posi in pos" position={{posi.loc}} radius={{posi.radius}} color="#FFFFFF">
+  <a-assets>
+    <img id="my-texture" src="unnamed.png">
+  </a-assets>
+    <a-sphere ng-repeat="posi in pos" position={{posi.loc}} radius={{posi.radius}} color="#FFFFFF" material="src: #my-texture" rotation="0 270 0">
         <a-animation ng-if="true" attribute="position" to="2.5 2.5 2.5" direction="alternate" dur="5000" repeat="indefinite" ></a-animation>
+
+        <a-animation ng-if="true" attribute="rotation" from="0 270 0" to="0 630 0" direction="normal" dur="1000" repeat="indefinite" ></a-animation>
     </a-sphere>
     <!--<a-box color="tomato" depth="2" height="4" width="0.5"></a-box>-->
     <a-sky color="#000000"></a-sky>
