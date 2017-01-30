@@ -11,17 +11,22 @@
 
 <a-scene>
     <a-assets>
-    <img id="hwndu-text" src="hewillnotdivideus2.png">
+        <img id="hwndu-text" src="hewillnotdivideus2.png">
         <img id="dirt" src="dirt.png">
+        <img id="kek" src="kek.png">
     </a-assets>
     <iframe id="ls_embed_1484869638" src="//livestream.com/accounts/23093026/events/6897778/player?width=0&height=0&enableInfoAndActivity=true&autoPlay=true&mute=false" width="1" height="1" frameborder="0" scrolling="no" allowfullscreen> </iframe>
     <!--<a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>-->
     <!--<a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>-->
     <!--<a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>-->
-    <a-plane rotation="-90 0 0" width="4" height="8" color="#4c3b04" material="src:#dirt"></a-plane>
     <a-plane position="0 2 0" rotation="0 0 0" width="4" height="4" material="src:#hwndu-text"></a-plane>
-
-    <a-sky color="#ECECEC"></a-sky>
+    <a-plane position="0 2 -0.001" rotation="0 0 0" width="16" height="4" color="#ECECEC"></a-plane>
+    <a-plane position="0 0 8" rotation="-90 0 0" width="16" height="16" color="#4c3b04" material="src:#dirt"></a-plane>
+    <a-plane position="-8 2 8" rotation="0 90 0" width="16" height="4"  material="src:#kek"></a-plane>
+    <a-plane position="8 2 8" rotation="180 90 0" width="16" height="4" ></a-plane>
+    <!--<a-plane rotation="-90 0 0" width="4" height="8" color="#4c3b04"></a-plane>-->
+    <!--<a-sky color="#ECECEC"></a-sky>-->
+    <a-sky src="sky.jpg"></a-sky>
     <a-entity position="0 0 3.8">
         <a-camera></a-camera>
     </a-entity>
