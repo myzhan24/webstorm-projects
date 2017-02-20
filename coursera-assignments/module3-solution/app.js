@@ -56,10 +56,8 @@
                 var foundItems = [];
 
                 if (result.data.menu_items != null) {
-                    result.data.menu_items.forEach(function (menuItem) {
-                        if (menuItem.description.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            foundItems.push(menuItem);
-                        }
+                    foundItems = result.data.menu_items.filter(function(item) {
+                        return item.description.toLowerCase().includes(searchTerm.toLowerCase());
                     });
                 }
 
