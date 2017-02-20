@@ -24,12 +24,12 @@
         controller.found = [];
         controller.nothingFound = false;
         controller.search = function () {
-            var promise = MenuSearchService.getMatchedMenuItems(controller.description);
-            if (controller.description != ""){
-                promise.then(function (response) {
-                    controller.found = response;
-                    controller.nothingFound = controller.found.length == 0;
-                });
+            if (controller.description != "") {
+                MenuSearchService.getMatchedMenuItems(controller.description)
+                    .then(function (response) {
+                        controller.found = response;
+                        controller.nothingFound = controller.found.length == 0;
+                    });
             } else {
                 controller.found = [];
                 controller.nothingFound = true;
