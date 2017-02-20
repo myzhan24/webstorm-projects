@@ -3,18 +3,34 @@
     angular.module('NarrowItDownApp', [])
         .controller('NarrowItDownController', NarrowItDownController)
         .service('MenuSearchService', MenuSearchService)
+        .directive('foundItems', FoundItemsDirective)
         .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com');
+
+    function FoundItemsDirective() {
+        var ddo = {
+            templateUrl: 'foundItems.html',
+            scope: {
+                items: '<',
+                onRemove: '&'
+            }
+        };
+        return ddo;
+    }
 
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var controller = this;
         controller.description = "";
-        controller.foundMenuItems = [{name:'test'},{name:'test1'}];
+        controller.found = [];
         controller.search = function () {
-            MenuSearchService.getMatchedMenuItems(this.description, function(foundItems){
-                controller.foundMenuItems = foundItems;
+            MenuSearchService.getMatchedMenuItems(controller.description, function (foundItems) {
+                controller.found = foundItems;
             });
-        }
+        };
+        controller.removeItem = function(itemIndex) {
+            controller.found.splice(itemIndex,1);
+            console.log('removed index: ',itemIndex);
+        };
     }
 
     MenuSearchService.$inject = ['$http', 'ApiBasePath'];
@@ -32,7 +48,7 @@
                 if (result.data.menu_items != null) {
                     result.data.menu_items.forEach(function (menuItem) {
                         if (menuItem.description.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            console.log(searchTerm,' found in ',menuItem);
+                            console.log(searchTerm, ' found in ', menuItem);
                             foundItems.push(menuItem);
                         }
 
@@ -41,7 +57,7 @@
 
                 // return processed items
 
-                console.log('foundItems: ',foundItems);
+                console.log('foundItems: ', foundItems);
                 callback(foundItems);
             });
         }
