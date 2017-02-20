@@ -31,7 +31,8 @@
                     controller.nothingFound = controller.found.length == 0;
                 });
             } else {
-                controller.nothingFound = controller.found.length == 0;
+                controller.found = [];
+                controller.nothingFound = true;
             }
         };
 
