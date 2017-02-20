@@ -28,9 +28,9 @@
                 controller.found = response;
             })
         };
+
         controller.removeItem = function (itemIndex) {
             controller.found.splice(itemIndex, 1);
-            console.log('removed index: ', itemIndex);
         };
     }
 
