@@ -1,5 +1,6 @@
+<div ng-if="items.length>0">
 <h3>Found Items:</h3>
 <ul>
-    <li ng-repeat="listItem in items">{{listItem.name}} <button ng-click="onRemove({index: $index});">Remove Item</button></li>
-
+    <li ng-repeat="listItem in items">{{listItem.name}}, {{listItem.short_name}}, {{listItem.description}} <button ng-click="onRemove({index: $index});">Don't Want this one!</button></li>
 </ul>
+</div>

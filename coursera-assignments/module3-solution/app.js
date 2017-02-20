@@ -22,11 +22,17 @@
         var controller = this;
         controller.description = "";
         controller.found = [];
+        controller.nothingFound = false;
         controller.search = function () {
             var promise = MenuSearchService.getMatchedMenuItems(controller.description);
-            promise.then(function (response) {
-                controller.found = response;
-            })
+            if (controller.description != ""){
+                promise.then(function (response) {
+                    controller.found = response;
+                    controller.nothingFound = controller.found.length == 0;
+                });
+            } else {
+                controller.nothingFound = controller.found.length == 0;
+            }
         };
 
         controller.removeItem = function (itemIndex) {
