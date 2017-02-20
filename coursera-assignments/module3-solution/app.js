@@ -23,13 +23,14 @@
         controller.description = "";
         controller.found = [];
         controller.search = function () {
-            MenuSearchService.getMatchedMenuItems(controller.description, function (foundItems) {
-                controller.found = foundItems;
-            });
+            var promise = MenuSearchService.getMatchedMenuItems(controller.description);
+            promise.then(function (response) {
+                controller.found = response;
+            })
         };
-        controller.removeItem = function(itemIndex) {
-            controller.found.splice(itemIndex,1);
-            console.log('removed index: ',itemIndex);
+        controller.removeItem = function (itemIndex) {
+            controller.found.splice(itemIndex, 1);
+            console.log('removed index: ', itemIndex);
         };
     }
 
@@ -37,8 +38,10 @@
     function MenuSearchService($http, ApiBasePath) {
         var service = this;
 
-        service.getMatchedMenuItems = function (searchTerm, callback) {
-            $http({
+        service.getMatchedMenuItems = function (searchTerm) {
+
+            // this returns a promise
+            return $http({
                 method: 'GET',
                 url: ApiBasePath + "/menu_items.json"
             }).then(function (result) {
@@ -48,17 +51,13 @@
                 if (result.data.menu_items != null) {
                     result.data.menu_items.forEach(function (menuItem) {
                         if (menuItem.description.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            console.log(searchTerm, ' found in ', menuItem);
                             foundItems.push(menuItem);
                         }
-
                     });
                 }
 
                 // return processed items
-
-                console.log('foundItems: ', foundItems);
-                callback(foundItems);
+                return foundItems;
             });
         }
     }
