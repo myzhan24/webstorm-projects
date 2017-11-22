@@ -10,7 +10,11 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
+  -webkit-box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.28);
   width: 200px;
+  background-color: #232323;
 }
 
 .app-top-bar {
@@ -19,7 +23,8 @@ mat-sidenav {
   align-items: center;
   height: 50px;
   background: black;
-  border-bottom: solid #ff3c83 12px;
+  border-top: double #ff3c83 12px;
+  border-bottom: double #ff3c83 12px;
 }
 
 .app-header {
@@ -36,16 +41,29 @@ mat-sidenav {
   font-weight: bold;
 }
 
-.side-nav-button {
+.side-nav-toggle {
   font-size: 30px;
   height: 100%;
   min-width: 200px;
-  background:black;
-  color:white;
+  background: black;
+  color: white;
 }
 
 .side-nav-section {
-  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  //padding: 5px;
   outline: 0 !important;
   cursor: pointer;
 }
+
+.side-nav-button {
+  min-height: 50px;
+  color: #ffbe26;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: solid #ffffff 1px;
+}
+
+

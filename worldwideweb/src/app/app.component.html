@@ -1,18 +1,18 @@
 <div class="app-container">
   <div class="app-top-bar">
-    <button mat-button type="button" class="side-nav-button" (click)="sideNav.opened ?sideNav.close() : sideNav.open()">
+    <button mat-button type="button" class="side-nav-toggle" (click)="sideNav.opened ?sideNav.close() : sideNav.open()">
       {{sideNav.opened ? ':O':':l'}}
     </button>
-    <button mat-fab type="button" class="app-header-fab-button">Do it</button>
-    <div class="app-header">World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web</div>
+    <button mat-fab type="button" class="app-header-fab-button" (click)="handleDoIt()">Do it</button>
+    <div class="app-header" [ngStyle]="headerStyle">World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web</div>
   </div>
   <mat-sidenav-container>
     <mat-sidenav #sideNav mode="side" opened="true">
       <!-- sidenav content -->
       <!--<nav>-->
       <div class="side-nav-section">
-        <div routerLink="/welcome" routerLinkActive="active" class="side-nav-section">Welcome</div>
-        <div routerLink="/kidzcorner" routerLinkActive="active" class="side-nav-section">Kidz Corner</div>
+        <button mat-button routerLink="/welcome" routerLinkActive="active" class="side-nav-button">Welcome</button>
+        <button mat-button routerLink="/kidzcorner" routerLinkActive="active" class="side-nav-button">Kidz Corner</button>
       </div>
       <!--</nav>-->
     </mat-sidenav>

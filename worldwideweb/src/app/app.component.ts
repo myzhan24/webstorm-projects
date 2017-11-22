@@ -3,14 +3,21 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'app';
-  navOpened: boolean = true;
+  fontSize: number = 40;
 
+  headerStyle = {'font-size': (this.fontSize + 'px')};
 
-  toggleSideNav(): void {
-    this.navOpened = !this.navOpened;
+  handleDoIt(): void {
+    this.fontSize = this.fontSize * 1.1;
+    this.updateHeaderStyle(this.fontSize);
   }
+
+  updateHeaderStyle(fontSize: number): void {
+    this.headerStyle['font-size'] = fontSize + 'px';
+  }
+
 }
