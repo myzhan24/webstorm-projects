@@ -1,11 +1,10 @@
 <div class="app-container">
   <div class="app-top-bar">
-    <button mat-raised-button type="button" class="side-nav-button" (click)="sideNav.opened ?sideNav.close() : sideNav.open()">
+    <button mat-button type="button" class="side-nav-button" (click)="sideNav.opened ?sideNav.close() : sideNav.open()">
       {{sideNav.opened ? ':O':':l'}}
     </button>
     <button mat-fab type="button" class="app-header-fab-button">Do it</button>
-
-    <div class="app-header">World Wide Web World Wide Web World Wide Web World Wide Web World Wide Web World Wide Web</div>
+    <div class="app-header">World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web | World Wide Web</div>
   </div>
   <mat-sidenav-container>
     <mat-sidenav #sideNav mode="side" opened="true">
