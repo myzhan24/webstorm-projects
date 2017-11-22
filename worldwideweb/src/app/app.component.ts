@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'app';
   navOpened: boolean = true;
 
+
   toggleSideNav(): void {
     this.navOpened = !this.navOpened;
   }

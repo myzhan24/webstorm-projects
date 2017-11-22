@@ -8,7 +8,7 @@ import {KidzCornerComponent} from './kidz-corner/kidz-corner.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatSidenavModule} from '@angular/material';
 
 
 const appRoutes: Routes = [
@@ -30,7 +30,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
