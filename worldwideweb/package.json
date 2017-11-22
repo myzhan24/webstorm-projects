@@ -1,5 +1,5 @@
 {
-  "name": "floodfill",
+  "name": "worldwideweb",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -23,8 +23,7 @@
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14",
-    "fixed-2d-array": "^2.0.0"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.5.3",
