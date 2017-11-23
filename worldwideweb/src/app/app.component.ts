@@ -13,6 +13,9 @@ export class AppComponent {
 
   handleDoIt(): void {
     this.fontSize = this.fontSize * 1.1;
+    if (this.fontSize > 1000) {
+      this.fontSize = 40;
+    }
     this.updateHeaderStyle(this.fontSize);
   }
 
