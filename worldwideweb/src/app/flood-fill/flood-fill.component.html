@@ -6,7 +6,7 @@
   <button (click)="findPerimeters()" class="mz-button">Find Perimeters</button>
   <h1>Grid</h1>
   <div>
-    <div *ngFor="let grid of array?._grid">{{grid}}</div>
+    <div *ngFor="let row of array?.grid">{{row}}</div>
   </div>
   <div *ngFor="let row of mzArray.grid">
     {{row}}

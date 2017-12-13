@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import * as Fixed2DArray from 'fixed-2d-array/lib/fixed-2d-array';
-import {MzArray} from "./mz-array";
+// import * as Fixed2DArray from 'fixed-2d-array/lib/fixed-2d-array';
+import {MzArray} from './mz-array';
 
 @Component({
   selector: 'app-flood-fill',
@@ -44,8 +44,8 @@ export class FloodFillComponent implements OnInit {
 
   }
 
-  getNewRandomArray(width, height): Fixed2DArray {
-    const ret = new Fixed2DArray(width, height, 0);
+  getNewRandomArray(width, height): MzArray {
+    const ret = new MzArray(width, height, 0);
     const context = this;
 
     function myFunc(currentValue, index, array) {
@@ -56,7 +56,7 @@ export class FloodFillComponent implements OnInit {
     return ret;
   }
 
-  getNewFixedArray(): Fixed2DArray {
+  getNewFixedArray(): MzArray {
     // const ret = new Fixed2DArray(10, 10, 0);
     // const context = this;
     //
@@ -67,16 +67,16 @@ export class FloodFillComponent implements OnInit {
     // ret.forEach(myFunc);
     // return ret;
 
-    const ret = new Fixed2DArray(10, 10, 0);
-    ret.set(1, 1, 1);
+    const ret = new MzArray(10, 5, 0);
     ret.set(1, 2, 1);
     ret.set(1, 3, 1);
-    ret.set(2, 1, 1);
-    ret.set(2, 2, 2);
-    ret.set(2, 3, 1);
-    ret.set(3, 1, 1);
+    ret.set(1, 4, 1);
+    ret.set(2, 2, 1);
+    ret.set(2, 3, 2);
+    ret.set(2, 4, 1);
     ret.set(3, 2, 1);
     ret.set(3, 3, 1);
+    ret.set(3, 4, 1);
     return ret;
   }
 
