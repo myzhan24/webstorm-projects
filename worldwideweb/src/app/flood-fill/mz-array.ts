@@ -11,8 +11,8 @@ export class MzArray {
     this.grid = new Array(height);
 
     // Create width number of columns
-    for (let i = 0; i < height; i++) {
-      this.grid[i] = new Array(width);
+    for (let y = 0; y < height; y++) {
+      this.grid[y] = new Array(width);
     }
 
     if (MzArray.isPresent(initialValue)) {

@@ -10,8 +10,7 @@ import {MzArray} from './mz-array';
 export class FloodFillComponent implements OnInit {
 
   result = '';
-  array;
-  mzArray;
+  array: MzArray;
   private readonly ARRAY_DIMENSION: number = 100;
 
   constructor() {
@@ -19,8 +18,6 @@ export class FloodFillComponent implements OnInit {
 
   ngOnInit(): void {
     this.handleCreateFixedArray();
-
-    this.mzArray = new MzArray(5, 5, 1);
   }
 
 
@@ -40,10 +37,6 @@ export class FloodFillComponent implements OnInit {
     return Math.random() < 0.5 ? 0 : 1;
   }
 
-  getGrid() {
-
-  }
-
   getNewRandomArray(width, height): MzArray {
     const ret = new MzArray(width, height, 0);
     const context = this;
@@ -57,17 +50,7 @@ export class FloodFillComponent implements OnInit {
   }
 
   getNewFixedArray(): MzArray {
-    // const ret = new Fixed2DArray(10, 10, 0);
-    // const context = this;
-    //
-    // function myFunc(currentValue, index, grid) {
-    //   grid.set(index.y, index.x, 9-Math.abs(index.x - index.y));
-    // }
-    //
-    // ret.forEach(myFunc);
-    // return ret;
-
-    const ret = new MzArray(10, 5, 0);
+    const ret = new MzArray(10, 10, 0);
     ret.set(1, 2, 1);
     ret.set(1, 3, 1);
     ret.set(1, 4, 1);
