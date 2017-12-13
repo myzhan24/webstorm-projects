@@ -9,10 +9,12 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatSidenavModule} from '@angular/material';
+import {FloodFillComponent} from './flood-fill/flood-fill.component';
 
 
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
+  {path: 'floodfill', component: FloodFillComponent},
   {path: 'kidzcorner', component: KidzCornerComponent},
   {path: '', redirectTo: '/welcome', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     KidzCornerComponent,
     PageNotFoundComponent,
     WelcomeComponent,
+    FloodFillComponent,
   ],
   imports: [
     BrowserModule,
