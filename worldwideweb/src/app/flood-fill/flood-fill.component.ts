@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as Fixed2DArray from 'fixed-2d-array/lib/fixed-2d-array';
+import {MzArray} from "./mz-array";
 
 @Component({
   selector: 'app-flood-fill',
@@ -10,6 +11,7 @@ export class FloodFillComponent implements OnInit {
 
   result = '';
   array;
+  mzArray;
   private readonly ARRAY_DIMENSION: number = 100;
 
   constructor() {
@@ -17,7 +19,10 @@ export class FloodFillComponent implements OnInit {
 
   ngOnInit(): void {
     this.handleCreateFixedArray();
+
+    this.mzArray = new MzArray(5, 5, 1);
   }
+
 
   handleClick(): void {
     this.result = 'wow that really worked!';
@@ -55,8 +60,8 @@ export class FloodFillComponent implements OnInit {
     // const ret = new Fixed2DArray(10, 10, 0);
     // const context = this;
     //
-    // function myFunc(currentValue, index, array) {
-    //   array.set(index.y, index.x, 9-Math.abs(index.x - index.y));
+    // function myFunc(currentValue, index, grid) {
+    //   grid.set(index.y, index.x, 9-Math.abs(index.x - index.y));
     // }
     //
     // ret.forEach(myFunc);
@@ -73,6 +78,10 @@ export class FloodFillComponent implements OnInit {
     ret.set(3, 2, 1);
     ret.set(3, 3, 1);
     return ret;
+  }
+
+  findPerimeters(): void {
+
   }
 
 }

@@ -3,9 +3,14 @@
   <button (click)="handleClick()" class="mz-button">Start</button>
   <button (click)="handleCreateNewArray()" class="mz-button">Create New Array</button>
   <button (click)="handleCreateFixedArray()" class="mz-button">Fixed Array</button>
-  <h1>Result</h1>
-  <div>{{result}}</div>
+  <button (click)="findPerimeters()" class="mz-button">Find Perimeters</button>
+  <h1>Grid</h1>
   <div>
     <div *ngFor="let grid of array?._grid">{{grid}}</div>
   </div>
+  <div *ngFor="let row of mzArray.grid">
+    {{row}}
+  </div>
+  <h1>Result</h1>
+  <div>{{result}}</div>
 </div>
