@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Publishing
+
+Run these two commands
+ng build --prod --base-href "https://myzhan24.github.io/webstorm-projects/"
+angular-cli-ghpages
