@@ -10,6 +10,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatSidenavModule} from '@angular/material';
 import {FloodFillComponent} from './flood-fill/flood-fill.component';
+import { DragComponent } from './drag/drag.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     WelcomeComponent,
     FloodFillComponent,
+    DragComponent,
   ],
   imports: [
     BrowserModule,

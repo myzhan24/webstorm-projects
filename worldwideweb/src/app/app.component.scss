@@ -18,6 +18,7 @@ mat-sidenav {
 }
 
 .app-top-bar {
+  z-index: 2;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -25,6 +26,10 @@ mat-sidenav {
   background: black;
   border-top: double #ff3c83 12px;
   border-bottom: double #ff3c83 12px;
+
+  -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.28);
 }
 
 .app-header {
@@ -37,7 +42,6 @@ mat-sidenav {
 }
 
 .app-header-fab-button {
-  margin: 10px 0 0 15px;
   font-weight: bold;
 }
 
@@ -65,5 +69,3 @@ mat-sidenav {
   text-align: left;
   border-bottom: solid #a90637 1px;
 }
-
-
